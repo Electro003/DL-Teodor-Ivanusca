@@ -45,8 +45,14 @@ input_sequence = "The quick brown fox"
 
 words_to_predict = 2
 
-prediction = predict_next_n_words(input_sequence, words_to_predict)
+runs = 2
+i = 0
+while i < runs:
 
-print(f"Input Sequence: '{input_sequence}'")
-print(f"Predicted Next {words_to_predict} Words: '{prediction}'")
-print(f"Full Generated Sequence: '{input_sequence} {prediction}'")
+    prediction = predict_next_n_words(input_sequence, words_to_predict)
+
+    print(f"Input Sequence: '{input_sequence}'")
+    print(f"Predicted Next {words_to_predict} Words: '{prediction}'")
+    print(f"Full Generated Sequence: '{input_sequence} {prediction}'")
+    input_sequence = f"{input_sequence} {prediction}"
+    i+=1
